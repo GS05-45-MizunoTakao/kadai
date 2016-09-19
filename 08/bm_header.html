@@ -1,0 +1,49 @@
+
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <div class="header-site">
+            <h1><a href="bm_list_view.php">Instabook</a></h1>
+        </div>
+        <div class="header-nav">
+            <nav class="menu">
+                <ul>
+                <li id="search"><a href="#"><i class="fa fa-fw fa-search"></i></a></li>
+                    <form method="post" action="bm_search.php" id="search-child">
+                    <fieldset class="content field">
+                        <label for="title">Title</label>
+                        <input type="text" name="title">
+                        <label for="subtitle">Author</label>
+                        <input type="text" name="subtitle">
+                        <label for="tag">Tag</label>
+                        <select name="tag">
+                            <option value="">指定なし</option>
+                            <option value="文学">文学</option>
+                            <option value="思想">思想</option>
+                            <option value="ビジネス">ビジネス</option>
+                            <option value="テクノロジー">テクノロジー</option>
+                            <option value="アート">アート</option>
+                            <option value="旅行">旅行</option>
+                            <option value="コミック">コミック</option>
+                            <option value="雑誌">雑誌</option>
+                            <option value="その他">その他</option>
+                        </select>
+                        <label for="status">Done/Want</label>
+                        <select name="status">
+                            <option value="">指定なし</option>
+                            <option value="読んだ">読んだ</option>
+                            <option value="読みたい">読みたい</option>
+                        </select>
+                        <input type="submit" value="検索" class="submit-btn">
+                    </fieldset>
+                    </form>
+                <li><a href="bm_insert_view.php" class="menu-book"><i class="fa fa-fw fa-book"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    
+    

@@ -1,0 +1,44 @@
+Field名: 
+id:int (12) 主キー AUTO_INCREMENT --ユーザーID
+name :var_char(64) --名前
+email :var_char (128) --Email
+seibetu: int(1) --性別(0=男,1=女)
+age : int(2) --年齢(99歳まで)
+auth: int(1) --権限用(0=一般,1=管理ユーザ)
+indate: datetime --登録日
+
+INSERT INTO gs_users( id, name, email, seibetu, age, auth, indate ) 
+VALUES(NULL, 'yamada', 'yamada@test.test', 0, 24, 1, sysdate() );
+
+
+>1. SELECT文を使って、"id" 「1,3,5」だけ抽出するSQLを作る
+SELECT * FROM gs_users
+ WHERE id=1 OR id=3 OR id=5;
+
+>2. SELECT文を使って、"id" 「4〜8」を抽出するSQLを作る
+SELECT * FROM gs_users
+ WHERE id>=4 AND id<=8;
+
+>3. SELECT文を使って、"email"「test1」を抽出するあいまい検索を作る
+SELECT * FROM gs_users
+ WHERE email LIKE '%test1%';
+
+>4. SELECT文を使って、"新しい日付順"にソートするSQLを作る。
+SELECT * FROM gs_users
+ WHERE indate ORDER BY id DESC;
+
+>5. SELECT文を使って、"age"「20」で"indate"「2016-05-26%」のデー タを抽出するSQLを作る
+SELECT * FROM gs_users
+ WHERE age = 20
+ AND indate LIKE '2016-05-26%';
+
+>6. SELECT文を使って、"新しい日付順"で、「5個」だけ取得するSQLを作る
+SELECT * FROM gs_users
+ WHERE indate ORDER BY id DESC
+ LIMIT 5;
+
+>7. (難問題) "age"で「GROUP BY 」使い10,20,30,40歳が各何人知るか 抽出するSQLを作る
+SELECT age AS '年齢', COUNT(age) AS '人数'
+ FROM gs_users
+ WHERE age in (10,20,30,40)
+ GROUP BY age;
