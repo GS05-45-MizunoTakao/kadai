@@ -21,7 +21,6 @@ if ($status == false) {
 }
 ?>
 
-<!--<script id="script" src="js/bm.js"></script>-->
 
 <?php include("bm_head.html"); ?>
 <?php include("bm_header.html"); ?>

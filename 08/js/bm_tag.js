@@ -1,5 +1,7 @@
 
 $(function(){
+    
+
 //更新ファイル（bm_detail_view.php)のタグオプションの設定
     var $script  = $('#script');
     var tag      = JSON.parse($script.attr('tag'));    

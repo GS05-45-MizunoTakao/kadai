@@ -39,7 +39,7 @@ function contentsMake($result, $status) {
             </ul>
             <ul class='content-setting'>
                 <li class='time'><time datetime='2016-8-20'>".substr($result["indate"], 0, 10)."</time></li>
-                <li class='setting'><i class='fa fa-chevron-down' aria-hidden='true'></i></li>
+                <li class='setting' id='setting-".$result["id"]."'><i class='fa fa-chevron-down' aria-hidden='true'></i></li>
                 <ul class='setting-child'>
                     <li><a href='bm_detail_view.php?id=".$result["id"]."'><i class='fa fa-fw fa-cog' aria-hidden='true'></i>編集</a></li>
                     <li><a href='bm_delete.php?id=".$result["id"]."'><i class='fa fa-fw fa-times' aria-hidden='true'></i>削除</a></li>
@@ -52,6 +52,8 @@ function contentsMake($result, $status) {
     </div>";
     
 }
+
+// id='setting-".$result["id"]."'
 
 //phpからjsへ変数を渡す際のエスケープオプションを指定
 function json_safe_encode($data){
